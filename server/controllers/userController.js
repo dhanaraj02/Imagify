@@ -68,8 +68,8 @@ const loginUser = async (req, res) => {
 // API Controller function to get user available credits data
 const userCredits = async (req, res) => {
     try {
-
-        const { userId } = req.body
+        // CORRECTED: Access userId directly from req, not req.body
+        const userId = req.userId; 
 
         // Fetching userdata using userId
         const user = await userModel.findById(userId)
@@ -91,8 +91,9 @@ const razorpayInstance = new razorpay({
 // Payment API to add credits
 const paymentRazorpay = async (req, res) => {
     try {
-
-        const { userId, planId } = req.body
+        // CORRECTED: Access userId directly from req, not req.body
+        const { planId } = req.body;
+        const userId = req.userId; 
 
         const userData = await userModel.findById(userId)
 
@@ -198,9 +199,5 @@ const verifyRazorpay = async (req, res) => {
         res.json({ success: false, message: error.message });
     }
 }
-
-
-
-
 
 export { registerUser, loginUser, userCredits, paymentRazorpay, verifyRazorpay }
