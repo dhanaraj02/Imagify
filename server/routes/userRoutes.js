@@ -6,7 +6,7 @@ import {
     registerUser,
     loginUser,
 
-} from '../controllers/UserController.js'
+} from '../controllers/userController.js'
 import authUser from '../middlewares/auth.js'
 
 const userRouter = express.Router()
