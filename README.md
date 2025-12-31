@@ -1,4 +1,6 @@
 # Imagify – AI Text to Image Generator
+## 👉LIVE DEMO: https://imagify-ico4.vercel.app/
+
 
 Imagify is a full-stack AI SaaS web application that allows users to generate images from text prompts using the ClipDrop API.  
 The application includes secure user authentication, a credit-based image generation system, payment integration for purchasing credits, and image download functionality.
